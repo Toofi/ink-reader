@@ -1,10 +1,15 @@
 {
   "name": "ink-reader",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod && electron .",
+    "dist": "ng build --prod && electron-builder",
+    "electron": "ng build && electron .",
+    "package": "electron-builder --dir",
+    "package-all": "electron-builder",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -27,6 +32,8 @@
     "@angular/cli": "~15.2.7",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "electron": "^24.1.3",
+    "electron-builder": "^23.6.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
